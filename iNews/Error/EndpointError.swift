@@ -12,3 +12,16 @@ enum EndpointError : Error {
     case errorCode(Int)
     case unknown
 }
+
+extension EndpointError : LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .decodingError:
+            return "Failed to decode the object"
+        case .errorCode(let code):
+            return "\(code) - Something went wrong"
+        case .unknown:
+            return "An unknown error occurred!"
+        }
+    }
+}

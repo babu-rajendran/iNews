@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		0FEE0FB426524BB50079D366 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEE0FB326524BB50079D366 /* NewsService.swift */; };
 		0FEE0FB9265250000079D366 /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEE0FB8265250000079D366 /* ResultState.swift */; };
 		0FEE0FBE265250500079D366 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEE0FBD265250500079D366 /* NewsViewModel.swift */; };
+		0FEE0FC226525C320079D366 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 0FEE0FC126525C320079D366 /* URLImageStore */; };
+		0FEE0FC426525C320079D366 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0FEE0FC326525C320079D366 /* URLImage */; };
+		0FEE0FC726525C580079D366 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEE0FC626525C580079D366 /* ArticleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,7 @@
 		0FEE0FB326524BB50079D366 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		0FEE0FB8265250000079D366 /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
 		0FEE0FBD265250500079D366 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		0FEE0FC626525C580079D366 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FEE0FC426525C320079D366 /* URLImage in Frameworks */,
+				0FEE0FC226525C320079D366 /* URLImageStore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				0FEE0F9E26523E6F0079D366 /* HomeView.swift */,
+				0FEE0FC626525C580079D366 /* ArticleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +166,10 @@
 			dependencies = (
 			);
 			name = iNews;
+			packageProductDependencies = (
+				0FEE0FC126525C320079D366 /* URLImageStore */,
+				0FEE0FC326525C320079D366 /* URLImage */,
+			);
 			productName = iNews;
 			productReference = 0FEE0F8A26523E230079D366 /* iNews.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +197,9 @@
 				Base,
 			);
 			mainGroup = 0FEE0F8126523E230079D366;
+			packageReferences = (
+				0FEE0FC026525C320079D366 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 0FEE0F8B26523E230079D366 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,6 +233,7 @@
 				0FEE0F8E26523E230079D366 /* iNewsApp.swift in Sources */,
 				0FEE0FA5265240290079D366 /* NewsResponse.swift in Sources */,
 				0FEE0FAB265242160079D366 /* NewsEndpoint.swift in Sources */,
+				0FEE0FC726525C580079D366 /* ArticleView.swift in Sources */,
 				0FEE0FBE265250500079D366 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +423,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FEE0FC026525C320079D366 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FEE0FC126525C320079D366 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FEE0FC026525C320079D366 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+		0FEE0FC326525C320079D366 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FEE0FC026525C320079D366 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FEE0F8226523E230079D366 /* Project object */;
 }
